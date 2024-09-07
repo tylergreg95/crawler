@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/url"
+	"strings"
 )
 
 func normalizeURL(rawURL string) (string, error) {
@@ -14,9 +15,7 @@ func normalizeURL(rawURL string) (string, error) {
 	}
 
 	host := parsedURL.Host
-	path := parsedURL.Path
-
-	fmt.Println(host + path)
+	path := strings.TrimSuffix(parsedURL.Path, "/")
 
 	return host + path, nil
 }
