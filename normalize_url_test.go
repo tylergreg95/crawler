@@ -44,7 +44,6 @@ func TestNormalizeURL(t *testing.T) {
 			expected: "blog.boot.dev/path",
 		},
 	}
-	//more test cases
 
 	for i, tc := range tests {
 		t.Run(tc.name, func(t *testing.T) {
